@@ -8,6 +8,10 @@ export default function Login() {
     const [showCaptchaText, setCaptcha] = useState(false);
     const [signInError, setError] = useState(false);
 
+    // call setError if authentication fails (inside the catch function) 
+    // create a redux store
+    // create local variable for changeLanguage. useEffect to check whenever changeLanguage is changed 
+
     function TriggerCaptchaText(){
         setCaptcha(!showCaptchaText);
     }
