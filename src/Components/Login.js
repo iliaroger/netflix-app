@@ -19,7 +19,7 @@ export default function Login() {
     return (
         <div>
             <div className="row justify-content-center loginRow">
-                <img className="netflixLogo" alt="netflix logo" src={require('../Img/netflixLogo.png')}></img>
+                <img className="netflixLogo" alt="netflix logo" src={require('../img/netflixLogo.png')}></img>
                 <div className="col-3 signInBox">
                     <div className="signInContent">
                         <h2 className="signInHeader">Sign In</h2>
@@ -39,7 +39,7 @@ export default function Login() {
                             </div>
                         </form>
                         <div className="loginFacebook">
-                            <img src={require("../Img/facebookLogo.png")} alt="facebook logo"></img>
+                            <img src={require("../img/facebookLogo.png")} alt="facebook logo"></img>
                             <p>Login with Facebook</p>
                         </div>
                         <div className="signUpLink">
