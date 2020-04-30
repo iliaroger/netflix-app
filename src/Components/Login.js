@@ -42,7 +42,7 @@ export default function Login() {
                         </div>
                         <div className="recaptchaBox">
                             <p> This page is protected by Google reCAPTCHA to ensure you 're not a bot.</p>
-                            <p onClick={TriggerCaptchaText}> Learn more.</p>
+                            <p onClick={TriggerCaptchaText} id="learnMoreText"> Learn more.</p>
                             { showCaptchaText ? <p>The information collected by Google reCAPTCHA is subject
                                 to the Google Privacy Policy and Terms of Service, and is used for providing, 
                                 maintaining, and improving the reCAPTCHA service and for general security purposes 

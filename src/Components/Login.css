@@ -67,6 +67,7 @@
     border-radius: 5px;
     margin-top: 2%;
     margin-bottom: 2%;
+    color: white;
 }
 
 .inputBox input:focus {
@@ -107,6 +108,15 @@
 .loginFacebook p {
     margin-left: 3%;
     display: inline-block;
+}
+
+#learnMoreText{
+    text-decoration: underline;
+    display: inline-block;
+}
+
+#learnMoreText:hover{
+    cursor: pointer;
 }
 
 
