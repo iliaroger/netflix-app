@@ -3,6 +3,7 @@ import '../Components/Footer.css';
 import {Dropdown} from 'react-bootstrap';
 
 const Footer = (props) =>{
+
     return(
             <div className="col-md-12 footerWrapper">
                 <div className="contentBox">

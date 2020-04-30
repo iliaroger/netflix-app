@@ -24,18 +24,18 @@ export default function Login() {
                     <div className="signInContent">
                         <h2 className="signInHeader">Sign In</h2>
                         <form>
-                            <div class="form-group inputBox">
+                            <div className="form-group inputBox">
                                 <input type="email" aria-describedby="emailHelp" placeholder="Email or phone number"></input>
                             </div>
-                            <div class="form-group inputBox">
+                            <div className="form-group inputBox">
                                 <input type="password" placeholder="Password"></input>
                             </div>
-                            <button type="submit" class="btn loginButton">Sign In</button>
+                            <button type="submit" className="btn loginButton">Sign In</button>
                             {signInError ? <p className="errorEmailPassword">Your email or password is incorrect </p> : null}
-                            <div class="form-check helpBox">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
-                                <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                                <label class="form-check-label" for="exampleCheck1">Need help?</label>
+                            <div className="form-check helpBox">
+                                <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
+                                <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
+                                <label className="form-check-label" htmlFor="exampleCheck1">Need help?</label>
                             </div>
                         </form>
                         <div className="loginFacebook">
