@@ -119,5 +119,12 @@
     cursor: pointer;
 }
 
+.errorEmailPassword{
+    font-size: 14px !important;
+    color: rgb(255, 255, 255) !important;
+    text-decoration: underline;
+    text-align: center;
+}
+
 
 

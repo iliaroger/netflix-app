@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 export default function Login() {
 
     const [showCaptchaText, setCaptcha] = useState(false);
+    const [signInError, setError] = useState(false);
 
     function TriggerCaptchaText(){
         setCaptcha(!showCaptchaText);
@@ -26,6 +27,7 @@ export default function Login() {
                                 <input type="password" placeholder="Password"></input>
                             </div>
                             <button type="submit" class="btn loginButton">Sign In</button>
+                            {signInError ? <p className="errorEmailPassword">Your email or password is incorrect </p> : null}
                             <div class="form-check helpBox">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
                                 <label class="form-check-label" for="exampleCheck1">Remember me</label>
