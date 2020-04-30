@@ -1,0 +1,113 @@
+.signInBox{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.89);
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border-radius: 5px;
+}
+
+.signInContent{
+    padding: 40px;
+}
+
+.netflixLogo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    margin-top: 2%;
+    margin-left: 3%;
+}
+
+.loginRow{
+    background-image: url('../Img/movieBackground.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.signInHeader{
+    font-size: 35px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.helpBox{
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+.helpBox label{
+    display: inline-block;
+}
+
+.helpBox label:nth-child(2){
+    text-align: left;
+    user-select: none;
+}
+
+
+.helpBox label:nth-child(3) {
+    float: right;
+}
+
+.loginRow p, label, h1, h2, h3, h4, h5, h6 {
+    font-family: sf-thin;
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.5px;
+}
+
+.inputBox input{
+    background-color: #333333;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.inputBox input:focus {
+    background-color: #333333;
+    color: white;
+}
+
+.inputBox input:focus {
+    outline: none !important;
+}
+
+
+
+.loginButton{
+    background-color: #E50914;
+    color: white;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding: 10px;
+    font-family: sf-regular;
+    font-size: 18px;
+}
+
+.loginButton:hover{
+    color: white;
+}
+
+.loginRow p{
+    font-size: 15px;
+}
+
+.loginFacebook img{
+    display: inline-block;
+    width: 7%;
+}
+
+.loginFacebook p {
+    margin-left: 3%;
+    display: inline-block;
+}
+
+
+
