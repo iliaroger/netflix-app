@@ -1,8 +1,13 @@
 import React from 'react';
 import '../Components/Footer.css';
 import {Dropdown} from 'react-bootstrap';
+import {switchLanguageToEnglish, switchLanguageToGerman} from './actions/actions';
+import {useDispatch, useSelector} from 'react-redux';
 
 const Footer = (props) =>{
+
+    const dispatch = useDispatch();
+    const language = useSelector(state => state.language)
 
     return(
             <div className="col-md-12 footerWrapper">
@@ -15,12 +20,12 @@ const Footer = (props) =>{
                     </div>
                     <Dropdown className="footerDropdown">
                     <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                        English
+                        {language}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">English</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Deutsch</Dropdown.Item>
+                        <Dropdown.Item href="#/action-1" onClick={()=>{dispatch(switchLanguageToEnglish())}}>English</Dropdown.Item>
+                        <Dropdown.Item href="#/action-2" onClick={()=>{dispatch(switchLanguageToGerman())}}>Deutsch</Dropdown.Item>
                     </Dropdown.Menu>
                     </Dropdown>
                 </div>

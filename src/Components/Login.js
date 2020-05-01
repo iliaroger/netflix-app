@@ -2,11 +2,15 @@ import React, {useState} from 'react';
 import './Login.css';
 import Footer from './Footer';
 import {Link} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {switchLanguageToEnglish, switchLanguageToGerman} from './actions/actions';
 
 export default function Login() {
 
     const [showCaptchaText, setCaptcha] = useState(false);
     const [signInError, setError] = useState(false);
+
+    const currentLanguage = useSelector(state => state.language);
 
     // call setError if authentication fails (inside the catch function) 
     // create a redux store
