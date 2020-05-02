@@ -17,7 +17,7 @@ const Footer = (props) =>{
                     <div className="footerItems">
                         <p>{currentLanguage === 'English' ? englishText.footerGift : germanText.footerGift}</p>
                         <p>{currentLanguage === 'English' ? englishText.footerTerms : germanText.footerTerms}</p>
-                        <p>{currentLanguage === 'English' ? englishText.footerPrivacy : germanText.footerPrivacy}</p>
+                        <p>{currentLanguage === 'English' ? englishText.footerPrivacy : germanText.footerPrivacy    	}</p>
                     </div>
                     <Dropdown className="footerDropdown">
                     <Dropdown.Toggle variant="secondary" id="dropdown-basic">

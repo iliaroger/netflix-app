@@ -3,7 +3,6 @@ import './Login.css';
 import Footer from './Footer';
 import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {switchLanguageToEnglish, switchLanguageToGerman} from './actions/actions';
 import {englishText, germanText} from '../translations/signIn';
 
 export default function Login() {
