@@ -12,3 +12,18 @@
     font-family: 'sf-ultralight';
     src: url('./fonts/SF-Pro-Display-Ultralight.otf') format('opentype');
 }
+
+/*
+netflix colors
+
+black main: #030303
+light black: #101011
+white: #f2f2f2
+red: e50914
+
+*/
+
+body{
+    background-color: #030303 !important;
+}
+

@@ -1,0 +1,73 @@
+/*
+netflix colors
+
+black main: #030303
+light black: #101011
+white: #f2f2f2
+red: #e50914
+
+*/
+
+.startRow{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.startBox h1 {
+    text-align: center;
+}
+
+
+.startProfilesWrapper{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.startProfile{
+    display: inline-block;
+    width: 25%;
+}
+
+.startProfile img{
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    border: 5px solid #101011;
+    transition: 0.3s;
+}
+
+.startProfile h4{
+    text-align: center;
+    margin-top: 3%;
+    font-family: sf-ultralight;
+    color: #f2f2f2;
+}
+
+
+.startBoxButton{
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.startBox button{
+    text-transform: uppercase;
+    background-color: #030303;
+    color: grey;
+    padding: 10px 25px;
+    border: 1px solid grey;
+    transition: 0.5s;
+}
+
+.startBox button:hover{
+    color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    transition: 0.5s;
+}
+
+.startProfile:hover > img{
+    border: 5px solid #e50914;
+    transition: 0.3s;
+}
