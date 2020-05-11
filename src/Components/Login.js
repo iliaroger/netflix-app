@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import './Login.css';
 import Footer from './Footer';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {englishText, germanText} from '../translations/signIn';
+import {firestore} from '../Components/firestore';
+import {userAutheticated} from '../actions/actions';
 
 export default function Login() {
 
@@ -11,17 +13,39 @@ export default function Login() {
     const [signInError, setError] = useState(false);
 
     const currentLanguage = useSelector(state => state.language);
+    const userAuth = useSelector(state => state.userAuthenticated);
+
+    const dispatch = useDispatch();
+
+    let emailInput = '';
+    let passwordInput = '';
 
     // call setError if authentication fails (inside the catch function) 
     // create a redux store
     // create local variable for changeLanguage. useEffect to check whenever changeLanguage is changed 
 
-    function TriggerCaptchaText(){
+    function triggerCaptchaText(){
         setCaptcha(!showCaptchaText);
+    }
+
+    function verifyUser(){
+
+        const authPromise = firestore.auth.signInWithEmailAndPassword(emailInput.value, passwordInput.value);
+
+        authPromise.then((res)=>{
+            dispatch(userAutheticated(true));
+        }).catch((err)=>{
+            setError(true);
+        })
+        
     }
 
     return (
         <div>
+            {userAuth ? <Redirect to={{
+                pathname: '/start',
+                state: {validated: true}
+                }} /> : null}
             <div className="row justify-content-center loginRow">
                 <img className="netflixLogo" alt="netflix logo" src={require('../img/netflixLogo.png')}></img>
                 <div className="col-3 signInBox">
@@ -29,12 +53,12 @@ export default function Login() {
                         <h2 className="signInHeader">{currentLanguage === 'English' ? englishText.signIn : germanText.signIn}</h2>
                         <form>
                             <div className="form-group inputBox">
-                                <input type="email" aria-describedby="emailHelp" placeholder={currentLanguage === 'English' ? englishText.placeholderEmail : germanText.placeholderEmail}></input>
+                                <input ref={input => emailInput = input} type="email" aria-describedby="emailHelp" placeholder={currentLanguage === 'English' ? englishText.placeholderEmail : germanText.placeholderEmail}></input>
                             </div>
                             <div className="form-group inputBox">
-                                <input type="password" placeholder={currentLanguage === 'English' ? englishText.placeholderPassword : germanText.placeholderPassword}></input>
+                                <input ref={input => passwordInput = input} type="password" placeholder={currentLanguage === 'English' ? englishText.placeholderPassword : germanText.placeholderPassword}></input>
                             </div>
-                            <button type="submit" className="btn loginButton">{currentLanguage === 'English' ? englishText.signInButton : germanText.signInButton}</button>
+                            <button onClick={(e)=>{e.preventDefault(); verifyUser()}} type="submit" className="btn loginButton">{currentLanguage === 'English' ? englishText.signInButton : germanText.signInButton}</button>
                             {signInError ? <p className="errorEmailPassword">{currentLanguage === 'English' ? englishText.incorrectInput : germanText.incorrectInput}</p> : null}
                             <div className="form-check helpBox">
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
@@ -52,11 +76,12 @@ export default function Login() {
                         </div>
                         <div className="recaptchaBox">
                             <p>{currentLanguage === 'English' ? englishText.securedByCaptcha : germanText.securedByCaptcha}</p>
-                            <p onClick={TriggerCaptchaText} id="learnMoreText">{currentLanguage === 'English' ? englishText.learnMore : germanText.learnMore}</p>
+                            <p onClick={triggerCaptchaText} id="learnMoreText">{currentLanguage === 'English' ? englishText.learnMore : germanText.learnMore}</p>
                             { showCaptchaText ? <p>{currentLanguage === 'English' ? englishText.privacyStatement : germanText.privacyStatement}</p> : null}
                         </div>
                     </div>
                 </div>
+                {console.log('rerender occured')}
             <Footer></Footer>
             </div>
         </div>

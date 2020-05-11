@@ -10,3 +10,10 @@ export function switchLanguageToGerman() {
         type: 'SWITCH_GERMAN'
     }
 }
+
+export function userAutheticated(bool){
+    return {
+        type: 'USER_AUTHENTICATED',
+        payload: bool
+    }
+}

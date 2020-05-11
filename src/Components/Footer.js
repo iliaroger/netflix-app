@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Components/Footer.css';
 import {Dropdown} from 'react-bootstrap';
-import {switchLanguageToEnglish, switchLanguageToGerman} from './actions/actions';
+import {switchLanguageToEnglish, switchLanguageToGerman} from '../actions/actions';
 import {useDispatch, useSelector} from 'react-redux';
 import {englishText, germanText} from '../translations/signIn';
 

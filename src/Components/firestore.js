@@ -20,4 +20,6 @@ const firestore = {
 }
 
 
-export default firestore;
+export {
+    firestore
+}
