@@ -17,3 +17,9 @@ export function userAutheticated(bool){
         payload: bool
     }
 }
+
+export function selectedUser(user){
+    return {
+        type: user
+    }
+}
