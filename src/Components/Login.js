@@ -43,7 +43,7 @@ export default function Login() {
     return (
         <div>
             {userAuth ? <Redirect to={{
-                pathname: '/start',
+                pathname: '/user',
                 state: {validated: true}
                 }} /> : null}
             <div className="row justify-content-center loginRow">

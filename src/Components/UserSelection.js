@@ -1,10 +1,10 @@
 import React, {useRef} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
-import '../Components/Start.css';
+import '../Components/UserSelection.css';
 import {selectedUser} from '../actions/actions';
 
-export default function Start() {
+export default function UserSelection() {
 
     const userAuth = useSelector(state => state.userAuthenticated);
 
