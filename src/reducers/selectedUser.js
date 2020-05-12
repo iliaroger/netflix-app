@@ -1,19 +1,19 @@
 
 
-function selectedUser(state = null, action){
+function selectedUser(state = '', action){
 
-    switch(action){
-        case action === 'stephen': 
-            return state = 'stephen'
+    switch(action.type){
+        case 'stephen': 
+            return state = 'stephen';
         
-        case action === 'tony': 
-            return state = 'tony'
+        case 'tony': 
+            return state = 'tony';
 
-        case action === 'thor': 
-            return state = 'thor'
+        case 'thor': 
+            return state = 'thor';
         
-        case action === 'wanda': 
-            return state = 'wanda'
+        case 'wanda': 
+            return state = 'wanda';
         
         default:
             return state
