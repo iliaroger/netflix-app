@@ -6,7 +6,7 @@ const authReducer = (state = false, action) =>{
         case false: 
             return state = false;
         default: 
-            return state = false;
+            return state;
     }
 }
 

@@ -11,9 +11,9 @@ export default function Login() {
 
     const [showCaptchaText, setCaptcha] = useState(false);
     const [signInError, setError] = useState(false);
+    const [userSignedIn, setUserSignedIn] = useState(false);
 
     const currentLanguage = useSelector(state => state.language);
-    const userAuth = useSelector(state => state.userAuthenticated);
 
     const dispatch = useDispatch();
 
@@ -34,6 +34,7 @@ export default function Login() {
 
         authPromise.then((res)=>{
             dispatch(userAutheticated(true));
+            setUserSignedIn(true);
         }).catch((err)=>{
             setError(true);
         })
@@ -42,7 +43,7 @@ export default function Login() {
 
     return (
         <div>
-            {userAuth ? <Redirect to={{
+            {userSignedIn ? <Redirect to={{
                 pathname: '/user',
                 state: {validated: true}
                 }} /> : null}

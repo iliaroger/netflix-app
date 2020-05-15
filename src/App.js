@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="container-fluid">
       <Router>
-        <Switch>
+        <Switch> 
           <Route path="/" exact component={Login}></Route>
           <Route path="/user" exact component={UserSelection}></Route>
           <Route path="/main" exact component={ContentMenu}></Route>
