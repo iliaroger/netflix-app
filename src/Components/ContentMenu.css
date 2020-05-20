@@ -1,0 +1,81 @@
+/*
+netflix colors
+
+black main: #030303
+light black: #101011
+white: #f2f2f2
+red: e50914
+
+*/
+
+
+/*====================
+navbar
+======================*/
+
+.contentMenuRow .col-md-12 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.cmNavbar {
+    background-color: #030303;
+    padding-left: 5%;
+    padding-top: 1%;
+}
+
+.cmText {
+    color: #f2f2f2 !important;
+}
+
+.navbarProfileSection {
+    margin-right: 10% !important;
+}
+
+.navbarProfileIcon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin-top: -15%;
+}
+
+.profileFloat {
+    float: right;
+}
+
+/*====================
+movies section
+======================*/
+
+.contentSection {
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid green;
+    display: flex;
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+.sectionHeader {
+    margin-left: 5px;
+    position: absolute;
+    transform: translate(0px, -50px);
+}
+
+.selectionWrapper {
+    display: inline-block;
+    border: 1px solid red;
+    height: 140px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+.selectionBox img{
+    width: 120%;
+    transform: translate(-20px);
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
