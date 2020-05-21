@@ -48,18 +48,55 @@ movies section
 ======================*/
 
 .contentSection {
+    position: relative;
     margin: 0 auto;
     width: 90%;
     border: 1px solid green;
     display: flex;
     overflow: hidden;
-    margin-top: 5%;
+    margin-top: 2%;
+}
+
+#swipeLeft{
+    position: absolute;
+    background-color: #f2f2f200;
+    height: 140px;
+    width: 5%;
+    z-index: 900;
+    left: 0;
+    transition: 0.3s;
+    transform: translate(5px);
+}
+
+#swipeLeft:hover{
+    background-color: #f2f2f28f;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#swipeRight {
+    position: absolute;
+    background-color: #f2f2f200;
+    height: 140px;
+    width: 5%;
+    z-index: 900;
+    right: 0;
+    transition: 0.3s;
+}
+
+#swipeRight:hover {
+    background-color: #f2f2f28f;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.movieTitleWrapper{
+    width: 90%;
+    margin: 0 auto;
 }
 
 .sectionHeader {
-    margin-left: 5px;
-    position: absolute;
-    transform: translate(0px, -50px);
+   margin-left: 5px;
 }
 
 .selectionWrapper {

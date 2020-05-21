@@ -9,6 +9,7 @@ export default function ContentMenu() {
     const user = useSelector(state => state.activeUser)
     const currentUser = useRef(user);
 
+
     return (
         <div className="row contentMenuRow">
             <div className="col-md-12 navbarWrapper">
@@ -40,10 +41,15 @@ export default function ContentMenu() {
                 </Navbar.Collapse>
                 </Navbar>
             </div>
-
+            
+            <div className="col-md-12">
+                <div className="movieTitleWrapper">
+                    <h1 className="sectionHeader">Movies</h1>
+                </div>
 
                 <div className="contentSection">
-                    <h1 className="sectionHeader">Movies</h1>
+                    <div id="swipeLeft"></div>
+                    <div id="swipeRight"></div>
                     <div className="col-md-2 selectionWrapper">
                         <div className="overlayText">
 
@@ -101,6 +107,9 @@ export default function ContentMenu() {
                         </div>
                     </div>
                 </div>
+            </div>
+                
+
     </div>
     )
 }
