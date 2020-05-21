@@ -19,7 +19,7 @@ navbar
 }
 
 .cmNavbar {
-    background-color: #030303;
+    background-color: #101011;
     padding-left: 5%;
     padding-top: 1%;
 }
@@ -47,6 +47,10 @@ navbar
 movies section
 ======================*/
 
+.moviesSection{
+    margin-top: 2%;
+}
+
 .contentSection {
     position: relative;
     margin: 0 auto;
@@ -54,7 +58,12 @@ movies section
     border: 1px solid green;
     display: flex;
     overflow: hidden;
-    margin-top: 2%;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+}
+
+.contentSection::-webkit-scrollbar {
+    display: none;
 }
 
 #swipeLeft{

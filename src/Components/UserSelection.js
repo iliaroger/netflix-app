@@ -23,25 +23,25 @@ export default function UserSelection() {
                             <div className="startProfilesWrapper">
                                 <Link to="/main" onClick={()=>{dispatch(selectedUser('stephen'))}}>
                                     <div className="startProfile">
-                                        <img src={require('../img/drStrange.jpg')} alt="profile 1"></img>
+                                        <img src='/img/drStrange.jpg' alt="profile 1"></img>
                                         <h4>Stephen</h4>
                                     </div>
                                 </Link>
                                 <Link to="/main" onClick={()=>{dispatch(selectedUser('tony'))}}>
                                     <div className="startProfile">
-                                        <img src={require('../img/ironMan.jpg')} alt="profile 1"></img>
+                                        <img src= '/img/ironMan.jpg' alt="profile 1"></img>
                                         <h4>Tony</h4>
                                     </div>
                                 </Link>
                                 <Link to="/main" onClick={()=>{dispatch(selectedUser('thor'))}}>
                                     <div className="startProfile">
-                                        <img src={require('../img/thor.jpg')} alt="profile 1"></img>
+                                        <img src= '/img/thor.jpg' alt="profile 1"></img>
                                         <h4>Thor</h4>
                                     </div>
                                 </Link>
                                 <Link to="/main" onClick={()=>{dispatch(selectedUser('wanda'))}}>                                
                                     <div className="startProfile">
-                                        <img src={require('../img/wanda.jpg')} alt="profile 1"></img>
+                                        <img src= '/img/wanda.jpg' alt="profile 1"></img>
                                         <h4>Wanda</h4>
                                     </div>
                                 </Link>

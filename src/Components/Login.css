@@ -31,7 +31,7 @@ red: e50914
 }
 
 .loginRow{
-    background-image: url('../img/movieBackground.jpg');
+    background-image: url('/img/movieBackground.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
