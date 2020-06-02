@@ -4,7 +4,7 @@ netflix colors
 black main: #030303
 light black: #101011
 white: #f2f2f2
-red: e50914
+red: #e50914
 
 */
 
@@ -55,15 +55,27 @@ movies section
     position: relative;
     margin: 0 auto;
     width: 90%;
-    border: 1px solid green;
     display: flex;
     overflow: hidden;
     overflow-x: scroll;
-    -ms-overflow-style: none;
+    
 }
 
 .contentSection::-webkit-scrollbar {
-    display: none;
+    width: 20px;
+}
+
+.contentSection::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.moviesSection:hover > .contentSection::-webkit-scrollbar-thumb{
+    background-color: #e50914;
+}
+
+.contentSection::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 50px;
 }
 
 #swipeLeft{
@@ -110,7 +122,6 @@ movies section
 
 .selectionWrapper {
     display: inline-block;
-    border: 1px solid red;
     height: 140px;
     margin-left: 5px;
     overflow: hidden;
@@ -125,3 +136,82 @@ movies section
     -o-user-drag: none;
     user-drag: none;
 }
+
+
+/*====================
+footer section
+======================*/
+
+footer {
+    width: 100%;
+    margin-top: 7%;
+    margin-bottom: 1%;
+}
+
+.footerWrapperContent{
+    margin: 0 auto;
+    width: 70%;
+}
+
+.iconsWrapper{
+    margin-left: 3%;
+}
+
+
+.footerUpper{
+    margin-left: 3%;
+}
+
+.footerUpper p{
+    color: grey;
+    margin-bottom: 4%;
+    font-size: 14px;
+    font-family: sf-regular;
+}
+
+
+.footerIcons{
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.footerIcons img{
+    width: 30px; 
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.footerLower{
+    margin-top: 1%;
+    margin-left: 4%;
+}
+
+
+.footerLower Button{
+    background-color: transparent;
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 0px;
+    padding: 5px;
+    font-family: sf-regular;
+    font-size: 14px;
+}
+
+.footerLower Button:hover {
+    background-color: transparent;
+    color: white;
+    border: 1px solid grey;
+    border-radius: 0px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.footerLower p {
+    color: grey;
+    margin-top: 1%;
+    font-size: 12px;
+    user-select: none;
+    margin-bottom: 5px;
+    font-family: sf-regular;
+}
+
