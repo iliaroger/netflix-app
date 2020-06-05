@@ -70,7 +70,8 @@ export default function ContentMenu() {
                     <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
                     <div className="col-md-2 selectionWrapper">
                         <div className="overlayText">
-
+                            <h4>Movie Title</h4>
+                            <p>Action, Thriller</p>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>

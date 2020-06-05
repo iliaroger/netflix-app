@@ -16,7 +16,8 @@ firebase.initializeApp(firebaseConfig);
 
 const firestore = {
     auth: firebase.auth(),
-    db: firebase.database()
+    db: firebase.database(),
+    storage: firebase.storage()
 }
 
 
