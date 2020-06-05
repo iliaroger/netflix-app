@@ -47,7 +47,7 @@ export default function ContentMenu() {
 
                     <Nav>
                         <Nav.Link>
-                            {<h4>Hi, {user}</h4>}
+                            {<p>Hi, {user}</p>}
                         </Nav.Link>
                         <Nav.Link className="navbarIconLink">
                             <img className="navbarProfileIcon profileFloat" src={profileIcon} alt={user}></img>

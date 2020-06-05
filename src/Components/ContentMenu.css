@@ -24,6 +24,11 @@ navbar
     padding-top: 1%;
 }
 
+Nav p{
+    color: white;
+    font-size: 16px;
+}
+
 .cmText {
     color: #f2f2f2 !important;
 }
@@ -70,11 +75,12 @@ movies section
 }
 
 .moviesSection:hover > .contentSection::-webkit-scrollbar-thumb{
-    background-color: #e50914;
+    visibility: visible;
 }
 
 .contentSection::-webkit-scrollbar-thumb {
-    background-color: transparent;
+    visibility: hidden;
+    background-color: #e50914;
     border-radius: 50px;
 }
 
@@ -128,8 +134,9 @@ movies section
 }
 
 .selectionBox img{
-    width: 120%;
+    width: 250px;
     transform: translate(-20px);
+    align-content: center;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;

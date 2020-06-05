@@ -23,25 +23,33 @@ export default function UserSelection() {
                             <div className="startProfilesWrapper">
                                 <Link to="/main" onClick={()=>{dispatch(selectedUser('stephen'))}}>
                                     <div className="startProfile">
-                                        <img src='/img/drStrange.jpg' alt="profile 1"></img>
+                                        <div className="selectionImageWrapper">
+                                            <img src='/img/drStrange.jpg' alt="profile 1"></img>
+                                        </div>
                                         <h4>Stephen</h4>
                                     </div>
                                 </Link>
                                 <Link to="/main" onClick={()=>{dispatch(selectedUser('tony'))}}>
                                     <div className="startProfile">
-                                        <img src= '/img/ironMan.jpg' alt="profile 1"></img>
+                                        <div className="selectionImageWrapper">
+                                            <img src= '/img/ironMan.jpg' alt="profile 1"></img>
+                                        </div>
                                         <h4>Tony</h4>
                                     </div>
                                 </Link>
                                 <Link to="/main" onClick={()=>{dispatch(selectedUser('thor'))}}>
                                     <div className="startProfile">
-                                        <img src= '/img/thor.jpg' alt="profile 1"></img>
+                                        <div className="selectionImageWrapper">
+                                            <img src= '/img/thor.jpg' alt="profile 1"></img>
+                                        </div>
                                         <h4>Thor</h4>
                                     </div>
                                 </Link>
                                 <Link to="/main" onClick={()=>{dispatch(selectedUser('wanda'))}}>                                
                                     <div className="startProfile">
-                                        <img src= '/img/wanda.jpg' alt="profile 1"></img>
+                                        <div className="selectionImageWrapper">
+                                            <img src= '/img/wanda.jpg' alt="profile 1"></img>
+                                        </div>
                                         <h4>Wanda</h4>
                                     </div>
                                 </Link>
