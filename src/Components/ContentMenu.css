@@ -151,6 +151,7 @@ movies section
     transition: 0.3s;
     -webkit-backface-visibility: hidden;
     overflow: hidden;
+    user-select: none;
 }
 
 .overlayText h4{
@@ -162,6 +163,7 @@ movies section
     transition: 0.3s;
     margin-left: 10%;
     margin-top: 30%;
+    user-select: none;
 }
 
 .overlayText p{
@@ -172,6 +174,7 @@ movies section
     z-index: 100;
     transition: 0.3s;
     margin-left: 10%;
+    user-select: none;
 }
 
 .overlayText img{
@@ -184,6 +187,7 @@ movies section
     width: 25%;
     margin-bottom: 5%;
     margin-right: 10%;
+    user-select: none;
 }
 
 .selectionWrapper:hover>.overlayText h4{
@@ -199,6 +203,7 @@ movies section
 .selectionWrapper:hover>.overlayText img {
     opacity: 1;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .selectionWrapper:hover>.selectionBox img{

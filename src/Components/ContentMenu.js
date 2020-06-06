@@ -77,55 +77,7 @@ export default function ContentMenu() {
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
                         </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
+                    </div>         
                 </div>
             </div>
 
@@ -138,55 +90,9 @@ export default function ContentMenu() {
                     <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
                     <div className="col-md-2 selectionWrapper">
                         <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
+                            <h4>Movie Title</h4>
+                            <p>Action, Thriller</p>
+                            <img src="/img/playButton.png" alt="play movie button"></img>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
@@ -204,55 +110,9 @@ export default function ContentMenu() {
                     <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
                     <div className="col-md-2 selectionWrapper">
                         <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
+                            <h4>Movie Title</h4>
+                            <p>Action, Thriller</p>
+                            <img src="/img/playButton.png" alt="play movie button"></img>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
@@ -270,55 +130,9 @@ export default function ContentMenu() {
                     <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
                     <div className="col-md-2 selectionWrapper">
                         <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
-                        </div>
-                    </div>
-                    <div className="col-md-2 selectionWrapper">
-                        <div className="overlayText">
-
+                            <h4>Movie Title</h4>
+                            <p>Action, Thriller</p>
+                            <img src="/img/playButton.png" alt="play movie button"></img>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
