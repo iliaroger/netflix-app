@@ -48,7 +48,7 @@ export default function Login() {
                 state: {validated: true}
                 }} /> : null}
             <div className="row justify-content-center loginRow">
-                <img className="netflixLogo" alt="netflix logo" src= '/img/netflixLogo.png'></img>
+                <img className="netflixLogo" alt="netflix logo" src= '/img/icons/netflixLogo.png'></img>
                 <div className="col-3 signInBox">
                     <div className="signInContent">
                         <h2 className="signInHeader">{currentLanguage === 'English' ? englishText.signIn : germanText.signIn}</h2>
@@ -68,7 +68,7 @@ export default function Login() {
                             </div>
                         </form>
                         <div className="loginFacebook">
-                            <img src= '/img/facebookLogo.png' alt="facebook logo"></img>
+                            <img src= '/img/icons/facebookLogo.png' alt="facebook logo"></img>
                             <p>{currentLanguage === 'English' ? englishText.loginWithFacebook : germanText.loginWithFacebook}</p>
                         </div>
                         <div className="signUpLink">

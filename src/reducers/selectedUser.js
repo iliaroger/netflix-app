@@ -4,16 +4,16 @@ function selectedUser(state = '', action){
 
     switch(action.type){
         case 'stephen': 
-            return state = 'stephen';
+            return state = 'Stephen';
         
         case 'tony': 
-            return state = 'tony';
+            return state = 'Tony';
 
         case 'thor': 
-            return state = 'thor';
+            return state = 'Thor';
         
         case 'wanda': 
-            return state = 'wanda';
+            return state = 'Wanda';
         
         default:
             return state

@@ -10,23 +10,27 @@ export default function ContentMenu() {
     const currentUser = useRef(user);
     const [profileIcon, setProfileIcon] = useState('');
 
-    useEffect(()=>{
-        switch (user){
-            case 'tony':
+    function SelectUser(){
+        switch (user) {
+            case 'Tony':
                 setProfileIcon('/img/ironMan.jpg');
                 break;
-            case 'stephen':
+            case 'Stephen':
                 setProfileIcon('/img/drStrange.jpg');
                 break;
-            case 'thor':
+            case 'Thor':
                 setProfileIcon('/img/thor.jpg');
                 break;
-            case 'wanda':
+            case 'Wanda':
                 setProfileIcon('/img/wanda.jpg');
                 break;
             default:
-            return ''
+                return ''
         }
+    }
+
+    useEffect(()=>{
+        SelectUser();
     },[])
 
     return (
@@ -34,7 +38,7 @@ export default function ContentMenu() {
             <div className="col-md-12 navbarWrapper">
                 <Navbar className="cmNavbar" expand="lg">
                 <Navbar.Brand className="cmText" href="#home">
-                    <img className="d-inline-block align-top" width="100px" src= '/img/netflixLogo.png' alt="netflix logo"></img>
+                    <img className="d-inline-block align-top" width="100px" src= '/img/icons/netflixLogo.png' alt="netflix logo"></img>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -68,11 +72,15 @@ export default function ContentMenu() {
                 <div className="contentSection">
                     {/* <div id="swipeLeft" onClick={()=>{setLeft(!swipeLeft)}}></div>
                     <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
-                    <div className="col-md-2 selectionWrapper">
+                    <div className="col-md-2 col-sm-4 selectionWrapper">
                         <div className="overlayText">
+                            <div className="addToMyList">
+                                <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                <p>Add to List</p>
+                            </div>
                             <h4>Movie Title</h4>
                             <p>Action, Thriller</p>
-                            <img src="/img/playButton.png" alt="play movie button"></img>
+                            <img className="overlayPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
@@ -88,11 +96,15 @@ export default function ContentMenu() {
                 <div className="contentSection">
                     {/* <div id="swipeLeft" onClick={()=>{setLeft(!swipeLeft)}}></div>
                     <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
-                    <div className="col-md-2 selectionWrapper">
+                    <div className="col-md-2 col-sm-4 selectionWrapper">
                         <div className="overlayText">
+                            <div className="addToMyList">
+                                <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                <p>Add to List</p>
+                            </div>
                             <h4>Movie Title</h4>
                             <p>Action, Thriller</p>
-                            <img src="/img/playButton.png" alt="play movie button"></img>
+                            <img src="/img/icons/playButton.png" alt="play movie button"></img>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
@@ -108,11 +120,15 @@ export default function ContentMenu() {
                 <div className="contentSection">
                     {/* <div id="swipeLeft" onClick={()=>{setLeft(!swipeLeft)}}></div>
                     <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
-                    <div className="col-md-2 selectionWrapper">
+                    <div className="col-md-2 col-sm-4 selectionWrapper">
                         <div className="overlayText">
+                            <div className="addToMyList">
+                                <img src="/img/icons/minusIcon.png" alt="add to my list icon"></img>
+                                <p>Remove from List</p>
+                            </div>
                             <h4>Movie Title</h4>
                             <p>Action, Thriller</p>
-                            <img src="/img/playButton.png" alt="play movie button"></img>
+                            <img src="/img/icons/playButton.png" alt="play movie button"></img>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
@@ -128,11 +144,15 @@ export default function ContentMenu() {
                 <div className="contentSection">
                     {/* <div id="swipeLeft" onClick={()=>{setLeft(!swipeLeft)}}></div>
                     <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
-                    <div className="col-md-2 selectionWrapper">
+                    <div className="col-md-2 col-sm-4 selectionWrapper">
                         <div className="overlayText">
+                            <div className="addToMyList">
+                                <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                <p>Add to List</p>
+                            </div>
                             <h4>Movie Title</h4>
                             <p>Action, Thriller</p>
-                            <img src="/img/playButton.png" alt="play movie button"></img>
+                            <img src="/img/icons/playButton.png" alt="play movie button"></img>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
@@ -146,30 +166,30 @@ export default function ContentMenu() {
                         <div className="footerWrapperContent">
                             <div className="footerIcons">
                                 <div className="iconsWrapper">
-                                    <img src='/img/facebookIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/instaIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/twitterIcon.png' alt="twitter icon"></img>
-                                    <img src='/img/youtubeIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/instaIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
+                                    <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
                                 </div>
                             </div>
                             <div className="row footerUpper">
-                                <div className="col-md-3">
+                                <div className="col-md-3 col-sm-6">
                                         <p>Audio und Untertitel</p>
                                         <p>Medien-Center</p>
                                         <p>Datenschutz</p>
                                         <p>Kontakt</p>
                                 </div>
-                                <div className="col-md-3">
+                                <div className="col-md-3 col-sm-6">
                                         <p>Audiodiskreption</p>
                                         <p>Anlegerbeziehungen</p>
                                         <p>Rechtliche Hinweise</p>
                                 </div>
-                                <div className="col-md-3">
+                                <div className="col-md-3 col-sm-6">
                                         <p>Hilfe-Center</p>
                                         <p>Karriere</p>
                                         <p>Cookie-Einstellungen</p>
                                 </div>
-                                <div className="col-md-3">
+                                <div className="col-md-3 col-sm-6">
                                         <p>Geschenkkarten</p>
                                         <p>Nutzungsbedingungen</p>
                                         <p>Impressum</p>
