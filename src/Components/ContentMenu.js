@@ -79,12 +79,13 @@ export default function ContentMenu() {
                             </div>
                             <div className="overlayPlayButton">
                                 <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                 <h4>Tyler Rake Extraction</h4>
                                 <p>Action, Thriller</p>
                             </div>
                         </div>
                         <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
+                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tyler rake movie"></img>
                         </div>
                     </div>         
                 </div>
@@ -104,12 +105,13 @@ export default function ContentMenu() {
                             </div>
                             <div className="overlayPlayButton">
                                 <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <h4>Tyler Rake Extraction</h4>
+                                <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                <h4>Narcos</h4>
                                 <p>Action, Thriller</p>
                             </div>
                         </div>
                         <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
+                            <img src= '/img/movies/narcosSeries.jpg' alt="narcos series"></img>
                         </div>
                     </div>   
                 </div>
@@ -129,12 +131,13 @@ export default function ContentMenu() {
                             </div>
                             <div className="overlayPlayButton">
                                 <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <h4>Tyler Rake Extraction</h4>
-                                <p>Action, Thriller</p>
+                                <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                <h4>The Fast and the Furious</h4>
+                                <p>Action</p>
                             </div>
                         </div>
                         <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
+                            <img src= '/img/movies/theFastAndTheFurious.webp' alt="the fast and the furious movie"></img>
                         </div>
                     </div>   
                 </div>
@@ -154,12 +157,13 @@ export default function ContentMenu() {
                             </div>
                             <div className="overlayPlayButton">
                                 <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <h4>Tyler Rake Extraction</h4>
-                                <p>Action, Thriller</p>
+                                <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                <h4>Space Force</h4>
+                                <p>Action, Comedy</p>
                             </div>
                         </div>
                         <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
+                            <img src= '/img/movies/spaceForce.jpg' alt="space force movie"></img>
                         </div>
                     </div>   
                 </div>
