@@ -4,7 +4,7 @@ import Footer from './Footer';
 import {Link, Redirect} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {englishText, germanText} from '../translations/signIn';
-import {firestore} from '../Components/firestore';
+import firestore from '../Components/firestore';
 import {userAutheticated} from '../actions/actions';
 
 export default function Login() {

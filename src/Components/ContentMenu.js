@@ -3,11 +3,13 @@ import {useSelector} from 'react-redux';
 import '../Components/ContentMenu.css'
 import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 import {useSpring, animated} from 'react-spring';
+import firestore from './firestore';
 
 export default function ContentMenu() {
 
     const user = useSelector(state => state.activeUser);
     const currentUser = useRef(user);
+    const [mediaData, setMedia] = useState(['']);
     const [profileIcon, setProfileIcon] = useState('');
 
     function SelectUser(){
@@ -29,8 +31,25 @@ export default function ContentMenu() {
         }
     }
 
+    async function GetData(){
+        let data = [];
+        await firestore.db.collection("mediaData").get().then((querySnapshot)=>{
+            querySnapshot.forEach((queryElement)=>{
+                data.push({
+                    type: queryElement.data().media_type,
+                    name: queryElement.data().media_name,
+                    category: queryElement.data().media_category,
+                    image: queryElement.data().media_image,
+                    id: queryElement.id
+                })
+            })
+        });
+        setMedia(data);
+    }
+
     useEffect(()=>{
         SelectUser();
+        GetData();
     },[])
 
     return (
@@ -70,24 +89,33 @@ export default function ContentMenu() {
                     <h1 className="sectionHeader">Movies</h1>
                 </div>
                 <div className="contentSection">
-                    {/* <div id="swipeLeft" onClick={()=>{setLeft(!swipeLeft)}}></div>
-                    <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
-                    <div className="col-md-2 col-sm-4 selectionWrapper">
-                        <div className="overlayText">
-                            <div className="addToMyList">
-                                <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
-                            </div>
-                            <div className="overlayPlayButton">
-                                <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <h4>Tyler Rake Extraction</h4>
-                                <p>Action, Thriller</p>
-                            </div>
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tyler rake movie"></img>
-                        </div>
-                    </div>         
+                    {mediaData === [] ? <h2>Failed to load the data</h2> : 
+
+                        mediaData.map((el)=>{
+
+                            if(el.type === 'movie'){
+                            return <>
+                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                    </>
+                            }
+                            return null;
+                        })
+                    }    
                 </div>
             </div>
 
@@ -96,24 +124,32 @@ export default function ContentMenu() {
                     <h1 className="sectionHeader">Series</h1>
                 </div>
                 <div className="contentSection">
-                    {/* <div id="swipeLeft" onClick={()=>{setLeft(!swipeLeft)}}></div>
-                    <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
-                    <div className="col-md-2 col-sm-4 selectionWrapper">
-                        <div className="overlayText">
-                            <div className="addToMyList">
-                                <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
-                            </div>
-                            <div className="overlayPlayButton">
-                                <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <h4>Narcos</h4>
-                                <p>Action, Thriller</p>
-                            </div>
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/narcosSeries.jpg' alt="narcos series"></img>
-                        </div>
-                    </div>   
+                    {mediaData === [] ? <h2>Failed to load the data</h2> : 
+
+                        mediaData.map((el)=>{
+                            if(el.type === 'series'){
+                            return <>
+                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                    </>
+                            }
+                            return null;
+                        })
+                    }    
                 </div>
             </div>
 
@@ -122,8 +158,6 @@ export default function ContentMenu() {
                     <h1 className="sectionHeader">My List</h1>
                 </div>
                 <div className="contentSection">
-                    {/* <div id="swipeLeft" onClick={()=>{setLeft(!swipeLeft)}}></div>
-                    <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
                     <div className="col-md-2 col-sm-4 selectionWrapper">
                         <div className="overlayText">
                             <div className="addToMyList">
@@ -148,24 +182,139 @@ export default function ContentMenu() {
                     <h1 className="sectionHeader">Sci-Fi and Fantasy</h1>
                 </div>
                 <div className="contentSection">
-                    {/* <div id="swipeLeft" onClick={()=>{setLeft(!swipeLeft)}}></div>
-                    <div id="swipeRight" onClick={()=>{setRight(!swipeRight)}}></div> */}
-                    <div className="col-md-2 col-sm-4 selectionWrapper">
-                        <div className="overlayText">
-                            <div className="addToMyList">
-                                <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
-                            </div>
-                            <div className="overlayPlayButton">
-                                <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <h4>Space Force</h4>
-                                <p>Action, Comedy</p>
-                            </div>
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/spaceForce.jpg' alt="space force movie"></img>
-                        </div>
-                    </div>   
+                    {mediaData === [] ? <h2>Failed to load the data</h2> : 
+                        mediaData.map((el)=>{
+                            let firstCategory = el.category !== undefined ? el.category.split(',') : '';
+                            let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
+                            if(firstCategory[0] === 'Sci-fi' || trimSecond === 'Sci-fi'){
+                            return <>
+                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                    </>
+                                }
+                            return null;
+                        })
+                    }    
+                </div>
+            </div>
+
+            <div className="col-md-12 moviesSection">
+                <div className="movieTitleWrapper">
+                    <h1 className="sectionHeader">Drama</h1>
+                </div>
+                <div className="contentSection">
+                    {mediaData === [] ? <h2>Failed to load the data</h2> : 
+                        mediaData.map((el)=>{
+                            let firstCategory = el.category !== undefined ? el.category.split(',') : '';
+                            let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
+                            if(firstCategory[0] === 'Drama' || trimSecond === 'Drama'){
+                            return <>
+                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                    </>
+                                }
+                            return null;
+                        })
+                    }    
+                </div>
+            </div>
+
+            <div className="col-md-12 moviesSection">
+                <div className="movieTitleWrapper">
+                    <h1 className="sectionHeader">Adventure</h1>
+                </div>
+                <div className="contentSection">
+                    {mediaData === [] ? <h2>Failed to load the data</h2> : 
+                        mediaData.map((el)=>{
+                            let firstCategory = el.category !== undefined ? el.category.split(',') : '';
+                            let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
+                            if(firstCategory[0] === 'Adventure' || trimSecond === 'Adventure'){
+                            return <>
+                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                    </>
+                                }
+                            return null;
+                        })
+                    }    
+                </div>
+            </div>
+
+
+            <div className="col-md-12 moviesSection">
+                <div className="movieTitleWrapper">
+                    <h1 className="sectionHeader">Thriller</h1>
+                </div>
+                <div className="contentSection">
+                    {mediaData === [] ? <h2>Failed to load the data</h2> : 
+                        mediaData.map((el)=>{
+                            let firstCategory = el.category !== undefined ? el.category.split(',') : '';
+                            let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
+                            if(firstCategory[0] === 'Thriller' || trimSecond === 'Thriller'){
+                            return <>
+                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                    </>
+                                }
+                            return null;
+                        })
+                    }    
                 </div>
             </div>
 
