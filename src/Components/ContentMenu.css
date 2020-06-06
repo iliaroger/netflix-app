@@ -157,13 +157,14 @@ movies section
 .overlayText h4{
     color: transparent;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     z-index: 100;
     transition: 0.3s;
     margin-left: 10%;
-    margin-top: 30%;
+    margin-bottom: 12%;
     user-select: none;
+    font-size: 22px !important;
 }
 
 .overlayText p{
@@ -175,6 +176,8 @@ movies section
     transition: 0.3s;
     margin-left: 10%;
     user-select: none;
+    font-size: 12px;
+    margin-bottom: 5%;
 }
 
 .overlayText img{
@@ -184,9 +187,9 @@ movies section
     right: 0;
     z-index: 100;
     transition: 0.3s;
-    width: 25%;
+    width: 50%;
+    margin-right: 25%;
     margin-bottom: 5%;
-    margin-right: 10%;
     user-select: none;
 }
 
@@ -212,7 +215,6 @@ movies section
 }
 
 .addToMyList{
-    border: 2px solid red;
     position: absolute;
     top: 0;
     left: 0;
@@ -229,13 +231,25 @@ movies section
     transition: 0.3s;
 }
 
-.selectionWrapper:hover>.overlayText p {
+.selectionWrapper:hover>.overlayText .overlayPlayButton p {
     color: white;
     transition: 0.3s;
 }
 
-.selectionWrapper:hover>.overlayText img {
+.selectionWrapper:hover> .overlayText .addToMyList img{
     opacity: 1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.selectionWrapper:hover>.overlayText .overlayPlayButton img {
+    opacity: 0.35;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.selectionWrapper:hover>.addToMyList img {
+    opacity: 1 !important;
     transition: 0.3s;
     cursor: pointer;
 }

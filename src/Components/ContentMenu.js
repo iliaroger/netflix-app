@@ -76,11 +76,12 @@ export default function ContentMenu() {
                         <div className="overlayText">
                             <div className="addToMyList">
                                 <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
-                                <p>Add to List</p>
                             </div>
-                            <h4>Movie Title</h4>
-                            <p>Action, Thriller</p>
-                            <img className="overlayPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                            <div className="overlayPlayButton">
+                                <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                <h4>Tyler Rake Extraction</h4>
+                                <p>Action, Thriller</p>
+                            </div>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
@@ -100,16 +101,17 @@ export default function ContentMenu() {
                         <div className="overlayText">
                             <div className="addToMyList">
                                 <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
-                                <p>Add to List</p>
                             </div>
-                            <h4>Movie Title</h4>
-                            <p>Action, Thriller</p>
-                            <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                            <div className="overlayPlayButton">
+                                <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                <h4>Tyler Rake Extraction</h4>
+                                <p>Action, Thriller</p>
+                            </div>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
                         </div>
-                    </div>
+                    </div>   
                 </div>
             </div>
 
@@ -124,16 +126,17 @@ export default function ContentMenu() {
                         <div className="overlayText">
                             <div className="addToMyList">
                                 <img src="/img/icons/minusIcon.png" alt="add to my list icon"></img>
-                                <p>Remove from List</p>
                             </div>
-                            <h4>Movie Title</h4>
-                            <p>Action, Thriller</p>
-                            <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                            <div className="overlayPlayButton">
+                                <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                <h4>Tyler Rake Extraction</h4>
+                                <p>Action, Thriller</p>
+                            </div>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
                         </div>
-                    </div>
+                    </div>   
                 </div>
             </div>
 
@@ -148,16 +151,17 @@ export default function ContentMenu() {
                         <div className="overlayText">
                             <div className="addToMyList">
                                 <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
-                                <p>Add to List</p>
                             </div>
-                            <h4>Movie Title</h4>
-                            <p>Action, Thriller</p>
-                            <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                            <div className="overlayPlayButton">
+                                <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                <h4>Tyler Rake Extraction</h4>
+                                <p>Action, Thriller</p>
+                            </div>
                         </div>
                         <div className="selectionBox">
                             <img src= '/img/movies/tylerRakeExtraction.jpg' alt="tylerRakeMovie"></img>
                         </div>
-                    </div>
+                    </div>   
                 </div>
             </div>
 
