@@ -7,10 +7,16 @@ import firestore from './firestore';
 
 export default function ContentMenu() {
 
+    const [profileIcon, setProfileIcon] = useState('');
     const user = useSelector(state => state.activeUser);
     const currentUser = useRef(user);
     const [mediaData, setMedia] = useState(['']);
-    const [profileIcon, setProfileIcon] = useState('');
+    const [myList, setMyList] = useState([{
+        type: 'movie',
+        name: 'The Fast and the Furious',
+        category: 'Action, Adventure',
+        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_movies%2FtheFastAndTheFurious.webp?alt=media&token=6a357649-ae2e-478b-8df3-c4e60c1de404'
+    }]);
 
     function SelectUser(){
         switch (user) {
@@ -45,6 +51,24 @@ export default function ContentMenu() {
             })
         });
         setMedia(data);
+    }
+
+    function AddToMyList(el){
+        setMyList([
+        ...myList,
+        el
+        ])
+    }
+
+    function RemoveFromMyList(el){
+        let newArray = myList.filter((arrayElem)=>{
+            return arrayElem !== el
+        })
+        setMyList([
+            {
+                ...newArray
+            }
+        ])
     }
 
     useEffect(()=>{
@@ -98,7 +122,7 @@ export default function ContentMenu() {
                                     <div className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
-                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                    <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
@@ -158,22 +182,28 @@ export default function ContentMenu() {
                     <h1 className="sectionHeader">My List</h1>
                 </div>
                 <div className="contentSection">
-                    <div className="col-md-2 col-sm-4 selectionWrapper">
-                        <div className="overlayText">
-                            <div className="addToMyList">
-                                <img src="/img/icons/minusIcon.png" alt="add to my list icon"></img>
-                            </div>
-                            <div className="overlayPlayButton">
-                                <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
-                                <h4>The Fast and the Furious</h4>
-                                <p>Action</p>
-                            </div>
-                        </div>
-                        <div className="selectionBox">
-                            <img src= '/img/movies/theFastAndTheFurious.webp' alt="the fast and the furious movie"></img>
-                        </div>
-                    </div>   
+                    {
+                        myList.map((el)=>{
+                            return <>
+                            <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img onClick={()=>{RemoveFromMyList(el)}} src="/img/icons/minusIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                </>
+                        })
+                    }
                 </div>
             </div>
 
