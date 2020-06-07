@@ -30,6 +30,7 @@ Nav p{
 }
 
 .cmText {
+    font-family: sf-thin;
     color: #f2f2f2 !important;
 }
 
@@ -46,6 +47,16 @@ Nav p{
 
 .profileFloat {
     float: right;
+}
+
+.activeTab{
+    color: #f2f2f2 !important;
+    font-family: sf-thin;
+    font-weight: 800;
+}
+
+.errorMessageHeader{
+    margin-left: 5%;
 }
 
 /*====================

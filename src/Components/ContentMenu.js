@@ -15,6 +15,7 @@ export default function ContentMenu() {
     const [isAuth, setAuth] = useState(true);
     const currentUser = useRef(user);
     const dispatch = useDispatch();
+    const [activeTab, setTab] = useState('home');
     const [mediaData, setMedia] = useState(['']);
     const [myList, setMyList] = useState([{
         type: 'movie',
@@ -92,7 +93,9 @@ export default function ContentMenu() {
     return (
 
         <>
+            
             {!isAuth ? <Redirect to={{pathname: '/'}}></Redirect> :
+
             <div className="row contentMenuRow">
             <div className="col-md-12 navbarWrapper">
                 <Navbar className="cmNavbar" expand="lg">
@@ -102,15 +105,15 @@ export default function ContentMenu() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                    <Nav.Link className="cmText" href="#home">Home</Nav.Link>
-                    <Nav.Link className="cmText" href="#link">TV Shows</Nav.Link>
-                    <Nav.Link className="cmText" href="#link">Movies</Nav.Link>
-                    <Nav.Link className="cmText" href="#link">My List</Nav.Link>
+                    <Nav.Link className={activeTab === 'home' ? 'activeTab' : 'cmText'} href="#home">Home</Nav.Link>
+                    <Nav.Link className={activeTab === 'series' ? 'activeTab' : 'cmText'} href="#link">TV Shows</Nav.Link>
+                    <Nav.Link className={activeTab === 'movies' ? 'activeTab' : 'cmText'} href="#link">Movies</Nav.Link>
+                    <Nav.Link className={activeTab === 'myList' ? 'activeTab' : 'cmText'} href="#link">My List</Nav.Link>
                     </Nav>
 
                     <Nav>
                         <Nav.Link>
-                            {<p>Hi, {user}</p>}
+                            {<p className="cmText">Hi, {user}</p>}
                         </Nav.Link>
                         <Nav.Link className="navbarIconLink">
                             <img className="navbarProfileIcon profileFloat" src={profileIcon} alt={user}></img>
@@ -123,8 +126,17 @@ export default function ContentMenu() {
                 </Navbar.Collapse>
                 </Navbar>
             </div>
-            
-            <div className="col-md-12 moviesSection">
+
+            {
+                /*
+                switching between nav tabs
+                 */
+            }
+            {(()=>{
+                switch(activeTab){
+                    case 'home': 
+                    return <>
+                    <div className="col-md-12 moviesSection">
                 <div className="movieTitleWrapper">
                     <h1 className="sectionHeader">Movies</h1>
                 </div>
@@ -405,12 +417,38 @@ export default function ContentMenu() {
                     </div>
                 </div>
             </footer>
-                
+                    </>;
 
-    </div>
+
+
+                    case 'series':
+                        return <>
+
+                        </>;
+                        
+                        
+
+
+
+
+
+                    case 'movies':
+                        return <>
+
+                        </>;
+
+
+
+
+
+                    default:
+                        return <div className="col-md-12 errorMessageHeader"><h3>An error occurred during rendering. <br></br> Please reload the page.</h3></div>;
+                        
+                }
+            })()}       
+
+            </div>
             }
         </>
-
-        
     )
 }
