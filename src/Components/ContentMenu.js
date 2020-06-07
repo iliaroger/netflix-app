@@ -54,21 +54,22 @@ export default function ContentMenu() {
     }
 
     function AddToMyList(el){
+        
+        let checkArray = myList.filter(elem =>{
+            return elem.name !== el.name
+        })
+
         setMyList([
-        ...myList,
+        ...checkArray,
         el
         ])
     }
 
     function RemoveFromMyList(el){
         let newArray = myList.filter((arrayElem)=>{
-            return arrayElem !== el
+            return arrayElem.name !== el.name
         })
-        setMyList([
-            {
-                ...newArray
-            }
-        ])
+        setMyList(newArray);
     }
 
     useEffect(()=>{
@@ -156,7 +157,7 @@ export default function ContentMenu() {
                                     <div className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
-                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                    <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
@@ -221,7 +222,7 @@ export default function ContentMenu() {
                                     <div className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
-                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                    <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
@@ -256,7 +257,7 @@ export default function ContentMenu() {
                                     <div className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
-                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                    <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
@@ -291,7 +292,7 @@ export default function ContentMenu() {
                                     <div className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
-                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                    <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
@@ -327,7 +328,7 @@ export default function ContentMenu() {
                                     <div className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
-                                                    <img src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                    <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
