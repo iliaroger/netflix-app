@@ -55,6 +55,19 @@ Nav p{
     font-weight: 800;
 }
 
+.modalHeader{
+    background-color: #101011;
+    color: white;
+    border-bottom: none;
+    font-family: sf-thin;
+}
+
+.modalBody{
+    background-color: #101011;
+    color:white;
+    border-top: none;
+}
+
 /*====================
 movies section
 ======================*/
@@ -194,11 +207,10 @@ movies section
     position: absolute;
     opacity: 0;
     top: 0;
-    left: 0;
+    left: 20%;
     z-index: 100;
     transition: 0.3s;
     height: 100%;
-    margin-left: 25%;
     user-select: none;
 }
 
@@ -211,6 +223,7 @@ movies section
     margin-top: 5%;
     opacity: 0;
     transform: scale(1.01);
+    z-index: 100;
 }
 
 .addToMyList p {

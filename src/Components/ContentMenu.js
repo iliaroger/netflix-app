@@ -2,9 +2,10 @@ import React, {useRef, useState, useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import '../Components/ContentMenu.css'
-import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import {Navbar, Nav, Button, Modal} from 'react-bootstrap';
 import {useSpring, animated} from 'react-spring';
 import {userAutheticated} from '../actions/actions';
+import ReactPlayer from 'react-player';
 import firestore from './firestore';
 
 export default function ContentMenu() {
@@ -19,6 +20,8 @@ export default function ContentMenu() {
     const [mediaData, setMedia] = useState(['']);
     const [recentlyList, setRecently] = useState(['']);
     const [favoritesList, setFavorites] = useState(['']);
+    const [modalShow, setShow] = useState(false);
+    const [videoInfo, setVideoInfo] = useState({name: 'C Programming Language', url:'https://www.youtube.com/watch?v=ix5jPkxsr7M'});
     const [myList, setMyList] = useState([{
         type: 'movie',
         name: 'The Fast and the Furious',
@@ -60,13 +63,18 @@ export default function ContentMenu() {
                     name: queryElement.data().media_name,
                     category: queryElement.data().media_category,
                     image: queryElement.data().media_image,
-                    id: queryElement.id
+                    id: queryElement.id,
+                    url: queryElement.data().media_url
                 })
             })
         });
         setMedia(data);
         PopulateRecentlyWatched(data);
         PopulateFavorites(data);
+    }
+
+    function PlayVideoModal(el){
+
     }
 
     function AddToMyList(el){
@@ -149,6 +157,16 @@ export default function ContentMenu() {
                 </Navbar>
             </div>
 
+            <Modal size="lg" show={modalShow} onHide={()=>{setShow(false)}} 
+            aria-labelledby="contained-modal-title-vcenter" centered>
+            <Modal.Header className="modalHeader" closeButton>
+                <Modal.Title>{videoInfo.name}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="modalBody">
+                <ReactPlayer width="100%" url={videoInfo.url} playing></ReactPlayer>
+            </Modal.Body>
+            </Modal>
+
             {
                 /*
                 switching between nav tabs
@@ -176,7 +194,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
