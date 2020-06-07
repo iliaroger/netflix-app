@@ -1005,6 +1005,151 @@ export default function ContentMenu() {
                     case 'myList':
                         return <>
 
+                <div className="col-md-12 moviesSection">
+                <div className="movieTitleWrapper">
+                    <h1 className="sectionHeader">My List</h1>
+                </div>
+                <div className="contentSection">
+                    {
+                        myList.map((el)=>{
+                            return <>
+                            <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img onClick={()=>{RemoveFromMyList(el)}} src="/img/icons/minusIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                </>
+                        })
+                    }
+                    </div>
+                </div>
+
+                <div className="col-md-12 moviesSection">
+                <div className="movieTitleWrapper">
+                    <h1 className="sectionHeader">Recently Watched</h1>
+                </div>
+                <div className="contentSection">
+                    {mediaData === [] ? <h2>Failed to load the data</h2> : 
+                        mediaData.map((el)=>{
+                            let firstCategory = el.category !== undefined ? el.category.split(',') : '';
+                            let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
+                            let randomNumber = Math.floor(Math.random()*10);
+                            if(randomNumber %2 === 0){
+                            return <>
+                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                    </>
+                                }
+                            return null;
+                        })
+                    }    
+                </div>
+            </div>
+
+
+                    <div className="col-md-12 moviesSection">
+                <div className="movieTitleWrapper">
+                    <h1 className="sectionHeader">Favorites</h1>
+                </div>
+                <div className="contentSection">
+                    {mediaData === [] ? <h2>Failed to load the data</h2> : 
+                        mediaData.map((el)=>{
+                            let firstCategory = el.category !== undefined ? el.category.split(',') : '';
+                            let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
+                            let randomNumber = Math.floor(Math.random()*10);
+                            if((firstCategory[0] === 'Action' && randomNumber %2 === 0) || (trimSecond === 'Action' && randomNumber %2 === 0)){
+                            return <>
+                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                            <div className="overlayText">
+                                                <div className="addToMyList">
+                                                    <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
+                                                </div>
+                                                <div className="overlayPlayButton">
+                                                    <img src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <h4>{el.name}</h4>
+                                                    <p>{el.category}</p>
+                                                </div>
+                                            </div>
+                                            <div className="selectionBox">
+                                                <img src={el.image} alt={`${el.name} ${el.type}`}></img>
+                                            </div>
+                                        </div>     
+                                    </>
+                                }
+                            return null;
+                        })
+                    }    
+                </div>
+            </div>
+
+                <footer>
+                    <div className="col-md-12">
+                        <div className="footerWrapperContent">
+                            <div className="footerIcons">
+                                <div className="iconsWrapper">
+                                    <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/instaIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
+                                    <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
+                                </div>
+                            </div>
+                            <div className="row footerUpper">
+                                <div className="col-md-3 col-sm-6">
+                                        <p>Audio und Untertitel</p>
+                                        <p>Medien-Center</p>
+                                        <p>Datenschutz</p>
+                                        <p>Kontakt</p>
+                                </div>
+                                <div className="col-md-3 col-sm-6">
+                                        <p>Audiodiskreption</p>
+                                        <p>Anlegerbeziehungen</p>
+                                        <p>Rechtliche Hinweise</p>
+                                </div>
+                                <div className="col-md-3 col-sm-6">
+                                        <p>Hilfe-Center</p>
+                                        <p>Karriere</p>
+                                        <p>Cookie-Einstellungen</p>
+                                </div>
+                                <div className="col-md-3 col-sm-6">
+                                        <p>Geschenkkarten</p>
+                                        <p>Nutzungsbedingungen</p>
+                                        <p>Impressum</p>
+                                </div>
+                            </div>
+                            <div className="footerLower">
+                                <Button>Service-Code</Button>
+                                <p>&copy; 1997-2020 Netflix, Inc. i-08932ibuf9bi29f09978882eeee</p>
+                            </div>
+                    </div>
+                </div>
+            </footer>
+
                         </>;
 
 
