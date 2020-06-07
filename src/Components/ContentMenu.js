@@ -17,6 +17,8 @@ export default function ContentMenu() {
     const dispatch = useDispatch();
     const [activeTab, setTab] = useState('home');
     const [mediaData, setMedia] = useState(['']);
+    const [recentlyList, setRecently] = useState(['']);
+    const [favoritesList, setFavorites] = useState(['']);
     const [myList, setMyList] = useState([{
         type: 'movie',
         name: 'The Fast and the Furious',
@@ -63,6 +65,8 @@ export default function ContentMenu() {
             })
         });
         setMedia(data);
+        PopulateRecentlyWatched(data);
+        PopulateFavorites(data);
     }
 
     function AddToMyList(el){
@@ -82,6 +86,24 @@ export default function ContentMenu() {
             return arrayElem.name !== el.name
         })
         setMyList(newArray);
+    }
+
+    function PopulateRecentlyWatched(data){
+        let newData = data.filter(el=>{
+            return el.name.length < 10;
+        })
+
+        setRecently(newData);
+    }
+
+    function PopulateFavorites(data){
+        let newData = data.filter(el => {
+            return el.name.length > 10;
+        })
+
+        console.log(data);
+
+        setFavorites(newData);
     }
 
     useEffect(()=>{
@@ -1041,11 +1063,7 @@ export default function ContentMenu() {
                 </div>
                 <div className="contentSection">
                     {mediaData === [] ? <h2>Failed to load the data</h2> : 
-                        mediaData.map((el)=>{
-                            let firstCategory = el.category !== undefined ? el.category.split(',') : '';
-                            let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
-                            let randomNumber = Math.floor(Math.random()*10);
-                            if(randomNumber %2 === 0){
+                        recentlyList.map((el)=>{
                             return <>
                                     <div className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
@@ -1064,8 +1082,6 @@ export default function ContentMenu() {
                                             </div>
                                         </div>     
                                     </>
-                                }
-                            return null;
                         })
                     }    
                 </div>
@@ -1078,11 +1094,7 @@ export default function ContentMenu() {
                 </div>
                 <div className="contentSection">
                     {mediaData === [] ? <h2>Failed to load the data</h2> : 
-                        mediaData.map((el)=>{
-                            let firstCategory = el.category !== undefined ? el.category.split(',') : '';
-                            let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
-                            let randomNumber = Math.floor(Math.random()*10);
-                            if((firstCategory[0] === 'Action' && randomNumber %2 === 0) || (trimSecond === 'Action' && randomNumber %2 === 0)){
+                        favoritesList.map((el)=>{
                             return <>
                                     <div className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
@@ -1101,8 +1113,6 @@ export default function ContentMenu() {
                                             </div>
                                         </div>     
                                     </>
-                                }
-                            return null;
                         })
                     }    
                 </div>
