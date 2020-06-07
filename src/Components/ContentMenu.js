@@ -1,21 +1,32 @@
 import React, {useRef, useState, useEffect} from 'react';
-import {useSelector} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux';
 import '../Components/ContentMenu.css'
 import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 import {useSpring, animated} from 'react-spring';
+import {userAutheticated} from '../actions/actions';
 import firestore from './firestore';
 
 export default function ContentMenu() {
 
     const [profileIcon, setProfileIcon] = useState('');
     const user = useSelector(state => state.activeUser);
+    const authenticated = useSelector(state => state.userAuthenticated);
+    const [isAuth, setAuth] = useState(true);
     const currentUser = useRef(user);
+    const dispatch = useDispatch();
     const [mediaData, setMedia] = useState(['']);
     const [myList, setMyList] = useState([{
         type: 'movie',
         name: 'The Fast and the Furious',
         category: 'Action, Adventure',
         image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_movies%2FtheFastAndTheFurious.webp?alt=media&token=6a357649-ae2e-478b-8df3-c4e60c1de404'
+    },
+    {
+        type: 'movie',
+        name: 'Stranger Things',
+        category: 'Horror',
+        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_series%2FstrangerThingsSeries.jpg?alt=media&token=990a14c3-7ef8-4117-9f8f-a9768e621cdc'
     }]);
 
     function SelectUser(){
@@ -73,12 +84,16 @@ export default function ContentMenu() {
     }
 
     useEffect(()=>{
+        setAuth(authenticated);
         SelectUser();
         GetData();
     },[])
 
     return (
-        <div className="row contentMenuRow">
+
+        <>
+            {!isAuth ? <Redirect to={{pathname: '/'}}></Redirect> :
+            <div className="row contentMenuRow">
             <div className="col-md-12 navbarWrapper">
                 <Navbar className="cmNavbar" expand="lg">
                 <Navbar.Brand className="cmText" href="#home">
@@ -100,7 +115,7 @@ export default function ContentMenu() {
                         <Nav.Link className="navbarIconLink">
                             <img className="navbarProfileIcon profileFloat" src={profileIcon} alt={user}></img>
                         </Nav.Link>
-                        <Nav.Link className="cmText" href="#logout">
+                        <Nav.Link onClick={()=>{dispatch(userAutheticated(false)); setAuth(false)}} className="cmText" href="#logout">
                            Logout 
                         </Nav.Link>
                     </Nav>
@@ -393,5 +408,9 @@ export default function ContentMenu() {
                 
 
     </div>
+            }
+        </>
+
+        
     )
 }
