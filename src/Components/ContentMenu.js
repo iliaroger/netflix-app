@@ -26,13 +26,15 @@ export default function ContentMenu() {
         type: 'movie',
         name: 'The Fast and the Furious',
         category: 'Action, Adventure',
-        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_movies%2FtheFastAndTheFurious.webp?alt=media&token=6a357649-ae2e-478b-8df3-c4e60c1de404'
+        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_movies%2FtheFastAndTheFurious.webp?alt=media&token=6a357649-ae2e-478b-8df3-c4e60c1de404',
+        url: 'https://www.youtube.com/watch?v=2TAOizOnNPo'
     },
     {
         type: 'movie',
         name: 'Stranger Things',
         category: 'Horror',
-        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_series%2FstrangerThingsSeries.jpg?alt=media&token=990a14c3-7ef8-4117-9f8f-a9768e621cdc'
+        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_series%2FstrangerThingsSeries.jpg?alt=media&token=990a14c3-7ef8-4117-9f8f-a9768e621cdc',
+        url: 'https://www.youtube.com/watch?v=b9EkMc79ZSU'
     }]);
 
     function SelectUser(){
@@ -160,7 +162,7 @@ export default function ContentMenu() {
             <Modal size="lg" show={modalShow} onHide={()=>{setShow(false)}} 
             aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header className="modalHeader" closeButton>
-                <Modal.Title>{videoInfo.name}</Modal.Title>
+                <Modal.Title>{`On Netflix - ${videoInfo.name}`}</Modal.Title>
             </Modal.Header>
             <Modal.Body className="modalBody">
                 <ReactPlayer width="100%" url={videoInfo.url} playing></ReactPlayer>
@@ -228,7 +230,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -260,7 +262,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -293,7 +295,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -328,7 +330,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -363,7 +365,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -399,7 +401,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -481,7 +483,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -513,7 +515,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -546,7 +548,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -581,7 +583,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -616,7 +618,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -651,7 +653,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -739,7 +741,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -771,7 +773,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -804,7 +806,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -839,7 +841,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -874,7 +876,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -909,7 +911,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -944,7 +946,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -979,7 +981,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -1060,7 +1062,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -1090,7 +1092,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
@@ -1121,7 +1123,7 @@ export default function ContentMenu() {
                                                 </div>
                                                 <div className="overlayPlayButton">
                                                     <img src="/img/icons/playButton.png" alt="play movie button"></img>
-                                                    <img className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
+                                                    <img onClick={()=>{setVideoInfo({name: el.name, url: el.url}); setShow(true)}} className="hiddenPlayButton" src="/img/icons/playButton.png" alt="play movie button"></img>
                                                     <h4>{el.name}</h4>
                                                     <p>{el.category}</p>
                                                 </div>
