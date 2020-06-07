@@ -50,7 +50,7 @@ Nav p{
 }
 
 .activeTab{
-    color: #f2f2f2 !important;
+    color: white !important;
     font-family: sf-thin;
     font-weight: 800;
 }
@@ -189,16 +189,16 @@ movies section
     text-shadow: 1px 1px 1px transparent;
 }
 
-.overlayText img{
+
+.overlayPlayButton img{
     position: absolute;
     opacity: 0;
-    bottom: 0;
-    right: 0;
+    top: 0;
+    left: 0;
     z-index: 100;
     transition: 0.3s;
-    width: 50%;
-    margin-right: 25%;
-    margin-bottom: 5%;
+    height: 100%;
+    margin-left: 25%;
     user-select: none;
 }
 
