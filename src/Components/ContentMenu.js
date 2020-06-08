@@ -13,7 +13,6 @@ export default function ContentMenu() {
     const user = useSelector(state => state.activeUser);
     const authenticated = useSelector(state => state.userAuthenticated);
     const [isAuth, setAuth] = useState(true);
-    //const currentUser = useRef(user);
     const dispatch = useDispatch();
     const [activeTab, setTab] = useState('home');
     const [mediaData, setMedia] = useState(['']);
@@ -212,7 +211,7 @@ export default function ContentMenu() {
                                             <div className="selectionBox">
                                                 <img src={el.image} alt={`${el.name} ${el.type}`}></img>
                                             </div>
-                                        </div>     
+                                        </div>    
                                     </>
                             }
                             return null;
