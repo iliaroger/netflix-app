@@ -90,6 +90,26 @@ movies section
     
 }
 
+.close{
+    color: white;
+    transition: 0.3s;
+    outline: none;
+}
+
+button:focus{
+    outline: none;
+}
+
+.close span{
+    text-shadow: none;
+}
+
+.close:hover{
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+
 .contentSection::-webkit-scrollbar {
     width: 20px;
 }
@@ -405,6 +425,10 @@ media queries
      /*
         content display content section
     */
+
+    .sectionHeader{
+        font-size: 30px;
+    }
 
 
     .moviesSection {

@@ -1,9 +1,8 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import '../Components/ContentMenu.css'
 import {Navbar, Nav, Button, Modal} from 'react-bootstrap';
-import {useSpring, animated} from 'react-spring';
 import {userAutheticated} from '../actions/actions';
 import ReactPlayer from 'react-player';
 import firestore from './firestore';
@@ -14,7 +13,7 @@ export default function ContentMenu() {
     const user = useSelector(state => state.activeUser);
     const authenticated = useSelector(state => state.userAuthenticated);
     const [isAuth, setAuth] = useState(true);
-    const currentUser = useRef(user);
+    //const currentUser = useRef(user);
     const dispatch = useDispatch();
     const [activeTab, setTab] = useState('home');
     const [mediaData, setMedia] = useState(['']);
@@ -75,8 +74,19 @@ export default function ContentMenu() {
         PopulateFavorites(data);
     }
 
-    function PlayVideoModal(el){
+    function HashId() {
+        const characters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+            'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+            'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5',
+            '6', '7', '8', '9'
+        ];
 
+        let hash = '';
+        for (let i = 0; i < 20; i++) {
+            hash += `${characters[Math.floor(Math.random() * 62)]}`;
+        }
+
+        return `${hash}`
     }
 
     function AddToMyList(el){
@@ -110,8 +120,6 @@ export default function ContentMenu() {
         let newData = data.filter(el => {
             return el.name.length > 10;
         })
-
-        console.log(data);
 
         setFavorites(newData);
     }
@@ -189,7 +197,7 @@ export default function ContentMenu() {
 
                             if(el.type === 'movie'){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -223,7 +231,7 @@ export default function ContentMenu() {
                         mediaData.map((el)=>{
                             if(el.type === 'series'){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -255,7 +263,7 @@ export default function ContentMenu() {
                     {
                         myList.map((el)=>{
                             return <>
-                            <div className="col-md-2 col-sm-4 selectionWrapper">
+                            <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{RemoveFromMyList(el)}} src="/img/icons/minusIcon.png" alt="add to my list icon"></img>
@@ -288,7 +296,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if(firstCategory[0] === 'Sci-fi' || trimSecond === 'Sci-fi'){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -323,7 +331,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if(firstCategory[0] === 'Drama' || trimSecond === 'Drama'){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -358,7 +366,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if(firstCategory[0] === 'Adventure' || trimSecond === 'Adventure'){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -394,7 +402,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if(firstCategory[0] === 'Thriller' || trimSecond === 'Thriller'){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -476,7 +484,7 @@ export default function ContentMenu() {
                         mediaData.map((el)=>{
                             if(el.type === 'series'){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -508,7 +516,7 @@ export default function ContentMenu() {
                     {
                         myList.map((el)=>{
                             return <>
-                            <div className="col-md-2 col-sm-4 selectionWrapper">
+                            <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{RemoveFromMyList(el)}} src="/img/icons/minusIcon.png" alt="add to my list icon"></img>
@@ -541,7 +549,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if( (firstCategory[0] === 'Sci-fi' && el.type === 'series') || (trimSecond === 'Sci-fi' && el.type === 'series')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -576,7 +584,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if( (firstCategory[0] === 'Action' && el.type === 'series') || (trimSecond === 'Action' && el.type === 'series')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -611,7 +619,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if( (firstCategory[0] === 'Horror' && el.type === 'series') || (trimSecond === 'Horror' && el.type === 'series')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -646,7 +654,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if( (firstCategory[0] === 'Drama' && el.type === 'series') || (trimSecond === 'Drama' && el.type === 'series')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -734,7 +742,7 @@ export default function ContentMenu() {
 
                             if(el.type === 'movie'){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -766,7 +774,7 @@ export default function ContentMenu() {
                     {
                         myList.map((el)=>{
                             return <>
-                            <div className="col-md-2 col-sm-4 selectionWrapper">
+                            <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{RemoveFromMyList(el)}} src="/img/icons/minusIcon.png" alt="add to my list icon"></img>
@@ -799,7 +807,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if((firstCategory[0] === 'Action' && el.type === 'movie') || (trimSecond === 'Action' && el.types === 'movie')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -834,7 +842,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if((firstCategory[0] === 'Sci-fi' && el.type === 'movie') || (trimSecond === 'Sci-fi' && el.type === 'movie')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -869,7 +877,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if((firstCategory[0] === 'Adventure' && el.type === 'movie') || (trimSecond === 'Adventure' && el.type === 'movie')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -904,7 +912,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if((firstCategory[0] === 'Thriller' && el.type === 'movie') || (trimSecond === 'Thriller' && el.type === 'movie')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -939,7 +947,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if((firstCategory[0] === 'Comedy' && el.type === 'movie') || (trimSecond === 'Comedy' && el.type === 'movie')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -974,7 +982,7 @@ export default function ContentMenu() {
                             let trimSecond = firstCategory[1] !== undefined ? firstCategory[1].trim() : '';
                             if((firstCategory[0] === 'War' && el.type === 'movie') || (trimSecond === 'War' && el.type === 'movie')){
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -1055,7 +1063,7 @@ export default function ContentMenu() {
                     {
                         myList.map((el)=>{
                             return <>
-                            <div className="col-md-2 col-sm-4 selectionWrapper">
+                            <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{RemoveFromMyList(el)}} src="/img/icons/minusIcon.png" alt="add to my list icon"></img>
@@ -1085,7 +1093,7 @@ export default function ContentMenu() {
                     {mediaData === [] ? <h2>Failed to load the data</h2> : 
                         recentlyList.map((el)=>{
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -1116,7 +1124,7 @@ export default function ContentMenu() {
                     {mediaData === [] ? <h2>Failed to load the data</h2> : 
                         favoritesList.map((el)=>{
                             return <>
-                                    <div className="col-md-2 col-sm-4 selectionWrapper">
+                                    <div key={HashId()} className="col-md-2 col-sm-4 selectionWrapper">
                                             <div className="overlayText">
                                                 <div className="addToMyList">
                                                     <img onClick={()=>{AddToMyList(el)}} src="/img/icons/addIcon.png" alt="add to my list icon"></img>
@@ -1181,10 +1189,6 @@ export default function ContentMenu() {
             </footer>
 
                         </>;
-
-
-
-
 
                     default:
                         return <div className="col-md-12"><h3>Navigation menu not found.</h3></div>;
