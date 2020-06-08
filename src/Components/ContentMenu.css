@@ -108,39 +108,6 @@ movies section
     border-radius: 50px;
 }
 
-#swipeLeft{
-    position: absolute;
-    background-color: #f2f2f200;
-    height: 140px;
-    width: 5%;
-    z-index: 900;
-    left: 0;
-    transition: 0.3s;
-    transform: translate(5px);
-}
-
-#swipeLeft:hover{
-    background-color: #f2f2f28f;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-#swipeRight {
-    position: absolute;
-    background-color: #f2f2f200;
-    height: 140px;
-    width: 5%;
-    z-index: 900;
-    right: 0;
-    transition: 0.3s;
-}
-
-#swipeRight:hover {
-    background-color: #f2f2f28f;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
 .movieTitleWrapper{
     width: 90%;
     margin: 0 auto;
@@ -373,3 +340,161 @@ footer {
     font-family: sf-regular;
 }
 
+
+
+
+/*====================
+media queries
+======================*/
+
+@media (max-width: 575.98px) {
+
+
+    /*
+        select profile section
+    */
+
+    .selectionImageWrapper {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        border: 5px solid #101011;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    .startProfile h4 {
+        text-align: center;
+        margin-top: 3%;
+        font-family: sf-ultralight;
+        color: #f2f2f2;
+        user-select: none;
+        font-size: 14px;
+    }
+
+    .startBox button {
+        text-transform: uppercase;
+        background-color: #030303;
+        color: grey;
+        padding: 5px 15px;
+        border: 1px solid grey;
+        transition: 0.5s;
+        font-size: 14px;
+    }
+
+
+
+    /*
+        navbar content section
+    */
+
+    .navbarIconLink{
+        display: none;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        background-image: url("https://img.icons8.com/fluent/48/000000/menu--v1.png");
+    
+    }
+    
+    button:focus {
+        outline: none !important;
+    }
+
+
+     /*
+        content display content section
+    */
+
+
+    .moviesSection {
+        margin-top: 2%;
+    }
+
+    .contentSection {
+        position: relative;
+        margin: 0 auto;
+        width: 90%;
+        display: flex;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+
+    .selectionWrapper {
+        position: relative;
+        min-width: 70%;
+        height: 140px;
+        margin-left: 5px;
+        overflow: hidden;
+    }
+
+
+
+    /*
+        footer content section
+    */
+
+    .footerUpper p {
+        color: grey;
+        margin-bottom: 4%;
+        font-size: 12px;
+        font-family: sf-regular;
+        text-align: center;
+    }
+
+
+    .footerIcons {
+        margin-bottom: 20px;
+        margin-left: 30%;
+    }
+
+    .footerIcons img {
+        width: 20px;
+        display: inline-block;
+        margin-right: 5%;
+    }
+
+    .footerLower{
+        text-align: center;
+        margin-left: 10%;
+    }
+
+    .footerLower p {
+        font-size: 8px;
+    }
+
+    .footerLower Button {
+        background-color: transparent;
+        color: grey;
+        border: 1px solid grey;
+        border-radius: 0px;
+        padding: 5px;
+        font-family: sf-regular;
+        font-size: 10px;
+    }
+
+    .footerLower Button:hover {
+        background-color: transparent;
+        color: white;
+        border: 1px solid grey;
+        border-radius: 0px;
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    
+
+    
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+
+@media (min-width: 1200px) {}

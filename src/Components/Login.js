@@ -49,7 +49,7 @@ export default function Login() {
                 }} /> : null}
             <div className="row justify-content-center loginRow">
                 <img className="netflixLogo" alt="netflix logo" src= '/img/icons/netflixLogo.png'></img>
-                <div className="col-3 signInBox">
+                <div className="col-md-3 signInBox">
                     <div className="signInContent">
                         <h2 className="signInHeader">{currentLanguage === 'English' ? englishText.signIn : germanText.signIn}</h2>
                         <form>
