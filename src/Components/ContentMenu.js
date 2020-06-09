@@ -139,7 +139,7 @@ export default function ContentMenu() {
             <div className="col-md-12 navbarWrapper">
                 <Navbar className="cmNavbar" expand="lg">
                 <Navbar.Brand className="cmText" href="#home">
-                    <img className="d-inline-block align-top" width="100px" src= '/img/icons/netflixLogo.png' alt="netflix logo"></img>
+                    <img className="d-inline-block align-top" width="100px" src= '/img/icons/netflixLogo.png' alt="logo"></img>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -461,7 +461,7 @@ export default function ContentMenu() {
                             </div>
                             <div className="footerLower">
                                 <Button>Service-Code</Button>
-                                <p>&copy; 1997-2020 Netflix, Inc. i-08932ibuf9bi29f09978882eeee</p>
+                                <p>&copy; 1997-2020 Inc. i-08932ibuf9bi29f09978882eeee</p>
                             </div>
                     </div>
                 </div>
@@ -713,7 +713,7 @@ export default function ContentMenu() {
                             </div>
                             <div className="footerLower">
                                 <Button>Service-Code</Button>
-                                <p>&copy; 1997-2020 Netflix, Inc. i-08932ibuf9bi29f09978882eeee</p>
+                                <p>&copy; 1997-2020 Inc. i-08932ibuf9bi29f09978882eeee</p>
                             </div>
                     </div>
                 </div>
@@ -1042,7 +1042,7 @@ export default function ContentMenu() {
                             </div>
                             <div className="footerLower">
                                 <Button>Service-Code</Button>
-                                <p>&copy; 1997-2020 Netflix, Inc. i-08932ibuf9bi29f09978882eeee</p>
+                                <p>&copy; 1997-2020 Inc. i-08932ibuf9bi29f09978882eeee</p>
                             </div>
                     </div>
                 </div>
@@ -1181,7 +1181,7 @@ export default function ContentMenu() {
                             </div>
                             <div className="footerLower">
                                 <Button>Service-Code</Button>
-                                <p>&copy; 1997-2020 Netflix, Inc. i-08932ibuf9bi29f09978882eeee</p>
+                                <p>&copy; 1997-2020 Inc. i-08932ibuf9bi29f09978882eeee</p>
                             </div>
                     </div>
                 </div>

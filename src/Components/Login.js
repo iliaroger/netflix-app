@@ -49,16 +49,16 @@ export default function Login() {
                 }} /> : null}
             <div className="row justify-content-center loginRow">
                 <div className="loginBg"></div>
-                <img className="netflixLogo" alt="netflix logo" src= '/img/icons/netflixLogo.png'></img>
+                <img className="netflixLogo" alt="logo" src= '/img/icons/netflixLogo.png'></img>
                 <div className="col-md-3 signInBox">
                     <div className="signInContent">
                         <h2 className="signInHeader">{currentLanguage === 'English' ? englishText.signIn : germanText.signIn}</h2>
                         <form>
                             <div className="form-group inputBox">
-                                <input ref={input => emailInput = input} defaultValue="admin@netflix.com" type="email" aria-describedby="emailHelp" placeholder={currentLanguage === 'English' ? englishText.placeholderEmail : germanText.placeholderEmail}></input>
+                                <input ref={input => emailInput = input} defaultValue="test@app.com" type="email" aria-describedby="emailHelp" placeholder={currentLanguage === 'English' ? englishText.placeholderEmail : germanText.placeholderEmail}></input>
                             </div>
                             <div className="form-group inputBox">
-                                <input ref={input => passwordInput = input} defaultValue="admin1234" type="password" placeholder={currentLanguage === 'English' ? englishText.placeholderPassword : germanText.placeholderPassword}></input>
+                                <input ref={input => passwordInput = input} defaultValue="test1234" type="password" placeholder={currentLanguage === 'English' ? englishText.placeholderPassword : germanText.placeholderPassword}></input>
                             </div>
                             <button onClick={(e)=>{e.preventDefault(); verifyUser()}} type="submit" className="btn loginButton">{currentLanguage === 'English' ? englishText.signInButton : germanText.signInButton}</button>
                             {signInError ? <p className="errorEmailPassword">{currentLanguage === 'English' ? englishText.incorrectInput : germanText.incorrectInput}</p> : null}
