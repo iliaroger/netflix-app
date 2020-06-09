@@ -426,6 +426,22 @@ media queries
         content display content section
     */
 
+    .selectionBox img {
+        width: 280px;
+        transform: translate(-20px, -10px);
+        filter: none;
+        align-content: center;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+        transition: 0.3s;
+        -webkit-backface-visibility: hidden;
+        overflow: hidden;
+        user-select: none;
+    }
+
     .sectionHeader{
         font-size: 30px;
     }

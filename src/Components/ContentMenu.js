@@ -24,7 +24,7 @@ export default function ContentMenu() {
         type: 'movie',
         name: 'The Fast and the Furious',
         category: 'Action, Adventure',
-        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_movies%2FtheFastAndTheFurious.webp?alt=media&token=6a357649-ae2e-478b-8df3-c4e60c1de404',
+        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_movies%2FtheFastAndTheFurious.jpg?alt=media&token=7db2e571-85c4-47e4-b9f6-be20f8215a40',
         url: 'https://www.youtube.com/watch?v=2TAOizOnNPo'
     },
     {
@@ -431,7 +431,7 @@ export default function ContentMenu() {
                             <div className="footerIcons">
                                 <div className="iconsWrapper">
                                     <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/icons/instaIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/instagramIcon.png' alt="instagram icon"></img>
                                     <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
                                     <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
                                 </div>
@@ -683,7 +683,7 @@ export default function ContentMenu() {
                             <div className="footerIcons">
                                 <div className="iconsWrapper">
                                     <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/icons/instaIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/instagramIcon.png' alt="instagram icon"></img>
                                     <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
                                     <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
                                 </div>
@@ -1012,7 +1012,7 @@ export default function ContentMenu() {
                             <div className="footerIcons">
                                 <div className="iconsWrapper">
                                     <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/icons/instaIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/instagramIcon.png' alt="instagram icon"></img>
                                     <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
                                     <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
                                 </div>
@@ -1151,7 +1151,7 @@ export default function ContentMenu() {
                             <div className="footerIcons">
                                 <div className="iconsWrapper">
                                     <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/icons/instaIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/instagramIcon.png' alt="instagram icon"></img>
                                     <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
                                     <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
                                 </div>
