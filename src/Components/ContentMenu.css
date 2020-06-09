@@ -369,6 +369,23 @@ media queries
 
 @media (max-width: 575.98px) {
 
+    /*
+        login section
+    */
+
+    .netflixLogo {
+        position: absolute;
+        top: 0;
+        left: 25%;
+        width: 50%;
+        margin-left: -1%;
+        margin-top: 2%;
+        z-index: 1000;
+    }
+
+    .loginRow .col-md-3{
+        margin-top: 20%;
+    }
 
     /*
         select profile section
