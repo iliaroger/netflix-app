@@ -24,14 +24,14 @@ export default function ContentMenu() {
         type: 'movie',
         name: 'The Fast and the Furious',
         category: 'Action, Adventure',
-        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_movies%2FtheFastAndTheFurious.jpg?alt=media&token=7db2e571-85c4-47e4-b9f6-be20f8215a40',
+        image: 'https://firebasestorage.googleapis.com/v0/b/app3-1cc50.appspot.com/o/movies%2FtheFastAndTheFurious.jpg?alt=media&token=c85cd8a1-f6b2-4f90-8a5c-beb23000d381',
         url: 'https://www.youtube.com/watch?v=2TAOizOnNPo'
     },
     {
         type: 'movie',
         name: 'Stranger Things',
         category: 'Horror',
-        image: 'https://firebasestorage.googleapis.com/v0/b/netflixapp-2c830.appspot.com/o/netflix_series%2FstrangerThingsSeries.jpg?alt=media&token=990a14c3-7ef8-4117-9f8f-a9768e621cdc',
+        image: 'https://firebasestorage.googleapis.com/v0/b/app3-1cc50.appspot.com/o/series%2FstrangerThingsSeries.jpg?alt=media&token=d6556d4b-ac94-4234-965a-928120f4be28',
         url: 'https://www.youtube.com/watch?v=b9EkMc79ZSU'
     }]);
 
@@ -139,7 +139,7 @@ export default function ContentMenu() {
             <div className="col-md-12 navbarWrapper">
                 <Navbar className="cmNavbar" expand="lg">
                 <Navbar.Brand className="cmText" href="#home">
-                    <img className="d-inline-block align-top" width="100px" src= '/img/icons/netflixLogo.png' alt="logo"></img>
+                    <img className="d-inline-block align-top" width="100px" src= '/img/icons/mainLogo.png' alt="logo"></img>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -169,7 +169,7 @@ export default function ContentMenu() {
             <Modal size="lg" show={modalShow} onHide={()=>{setShow(false)}} 
             aria-labelledby="contained-modal-title-vcenter" centered>
             <Modal.Header className="modalHeader" closeButton>
-                <Modal.Title>{`On Netflix - ${videoInfo.name}`}</Modal.Title>
+                <Modal.Title>{`Currently Watching: - ${videoInfo.name}`}</Modal.Title>
             </Modal.Header>
             <Modal.Body className="modalBody">
                 <ReactPlayer width="100%" url={videoInfo.url} playing></ReactPlayer>
