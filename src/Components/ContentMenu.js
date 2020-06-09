@@ -431,7 +431,7 @@ export default function ContentMenu() {
                             <div className="footerIcons">
                                 <div className="iconsWrapper">
                                     <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/icons/instagramIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/inIcon.png' alt="instagram icon"></img>
                                     <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
                                     <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
                                 </div>
@@ -683,7 +683,7 @@ export default function ContentMenu() {
                             <div className="footerIcons">
                                 <div className="iconsWrapper">
                                     <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/icons/instagramIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/inIcon.png' alt="instagram icon"></img>
                                     <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
                                     <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
                                 </div>
@@ -1012,7 +1012,7 @@ export default function ContentMenu() {
                             <div className="footerIcons">
                                 <div className="iconsWrapper">
                                     <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/icons/instagramIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/inIcon.png' alt="instagram icon"></img>
                                     <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
                                     <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
                                 </div>
@@ -1151,7 +1151,7 @@ export default function ContentMenu() {
                             <div className="footerIcons">
                                 <div className="iconsWrapper">
                                     <img src='/img/icons/facebookIcon.png' alt="instagram icon"></img>
-                                    <img src='/img/icons/instagramIcon.png' alt="instagram icon"></img>
+                                    <img src='/img/icons/inIcon.png' alt="instagram icon"></img>
                                     <img src='/img/icons/twitterIcon.png' alt="twitter icon"></img>
                                     <img src='/img/icons/youtubeIcon.png' alt="instagram icon"></img>
                                 </div>
