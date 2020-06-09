@@ -31,12 +31,20 @@ red: e50914
 }
 
 .loginRow{
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.loginBg{
     background-image: url('/img/movieBackground.jpg');
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+    height: 100%;
+    filter: blur(6px) saturate(150%);
+    width: 100%;
+    position: absolute;
 }
 
 .signInHeader{

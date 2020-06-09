@@ -48,6 +48,7 @@ export default function Login() {
                 state: {validated: true}
                 }} /> : null}
             <div className="row justify-content-center loginRow">
+                <div className="loginBg"></div>
                 <img className="netflixLogo" alt="netflix logo" src= '/img/icons/netflixLogo.png'></img>
                 <div className="col-md-3 signInBox">
                     <div className="signInContent">
